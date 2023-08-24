@@ -1,0 +1,54 @@
+:root{
+    --animation-delay: 0;
+}
+
+@keyframes fadeInBottom {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes buttonPressed {
+    0% {
+        box-shadow: rgba(10, 10, 10, 0.9) -1px 1px 3px, rgba(10, 10, 10, 0.9) 1px 1px 3px;
+        opacity: 1;
+    }
+    20% {
+        box-shadow: none;
+        opacity: 0.9;
+    }
+    40%{
+        box-shadow: rgba(10, 10, 10, 0.9) -1px 1px 3px, rgba(10, 10, 10, 0.9) 1px 1px 3px;
+        opacity: 1;
+    }
+}
+
+@keyframes deletedRegistry{
+    0%{
+        transform: translateX(0px);
+        opacity: 1;
+        background-color: #e13131;
+    }
+    80%{
+        transform: translateX(250px);
+        opacity: 0;
+        background-color: #3f0505;
+    }
+}
+
+.fadeInBottom_animation{
+    animation: fadeInBottom 0.5s ease-in-out calc(var(--animation-delay)*1s) forwards;
+}
+
+.buttonPressed_animation{
+    animation: buttonPressed 1s ease-in-out 
+}
+
+.deletedRegistry_animation{
+    animation: deletedRegistry 1s ease-in-out forwards;
+}

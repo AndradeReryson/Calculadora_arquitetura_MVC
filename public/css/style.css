@@ -1,0 +1,155 @@
+/* BASE */
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2{
+    margin: 0;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #202020;
+}
+
+/* MODULO */
+
+.container{
+    height: 70%;
+    width: 60%;
+    padding: 5% 20%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2rem 1fr;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: center;
+    justify-items: center;
+}
+
+    /* Calculadora */
+
+.panel{
+    grid-row: 2;
+    padding: 1rem;
+    background-color: #5e6c8e;
+    box-shadow: rgba(10, 10, 10, 0.7) -2px 2px 3px, rgba(10, 10, 10, 0.7) 2px 1px 3px;
+    width: 10rem;
+    height: 16rem;  
+    border-radius: 10px;
+    border: 2px solid rgb(61, 61, 61);
+}
+
+.calculadora{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.5rem;
+}
+
+.calc__resultado{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 1;
+    border: 2px solid rgb(61, 61, 61);
+    text-align: right;
+    padding: 0.25rem 4%;
+    width: 92%;
+    height: 2rem;
+}
+
+.button{
+    height: 2rem;
+    width: 2rem;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(10, 10, 10, 0.9) -1px 1px 3px, rgba(10, 10, 10, 0.9) 1px 1px 3px;
+    user-select: none;
+    border: none;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+.button__number{
+    background-color: #ffffff;
+}
+
+.button__operation{
+    background-color: #efef7f;
+}
+
+.button__erase{
+    background-color: #ef7f7f;
+}
+
+.button__equals{
+    background-color: #83ef7f;
+}
+
+    /* Histórico */
+
+.historico{
+    grid-row: 2;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.card{
+    width: 90%;
+    box-sizing: border-box;
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(157, 171, 193);
+    margin: 0.5rem 0;
+    box-shadow: rgba(10, 10, 10, 0.7) -1px 1px 3px, rgba(10, 10, 10, 0.7) 1px 1px 3px;
+    opacity: 0;
+}
+
+.card__titulo{
+    font-size: 0.6rem;
+    text-align: right;
+}
+
+.card__conta{
+    font-size: 1.1rem;
+}
+
+.card__btnDeletar{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e13131;
+    color: white;
+    border-radius: 50%;
+    user-select: none;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+    

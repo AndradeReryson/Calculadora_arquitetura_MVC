@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./public/css/animations.css">
+    <title> Calculadora </title>
+</head>
+<body>
+    <div class="container">
+        <h2> Calculadora </h2>
+        <h2 class="historico__titulo"> Histórico </h2> 
+        <div class="panel">
+            <form class="calculadora" action="/calcular" method="POST">
+                <input id="tela" type="text" class="calc__resultado" value="<%= valor %>" name="calc_display" readonly>
+                <span class="button button__number" value="1">1</span>
+                <span class="button button__number" value="2">2</span>
+                <span class="button button__number" value="3">3</span>
+                <span class="button button__operation" value="+">+</span>
+                <span class="button button__number" value="4">4</span>
+                <span class="button button__number" value="5">5</span>
+                <span class="button button__number" value="6">6</span>
+                <span class="button button__operation" value="-">-</span>
+                <span class="button button__number" value="7">7</span>
+                <span class="button button__number" value="8">8</span>
+                <span class="button button__number" value="9">9</span>
+                <span class="button button__operation" value="*">*</span>
+                <span class="button button__erase" value="_">C</span>
+                <span class="button button__number" value="0">0</span>
+                <input type="submit" class="button button__equals" value="="></input>
+                <span class="button button__operation" value="/">/</span>
+            </form>
+        </div>
+        <div class="historico">
+            <% if (historico.length > 0) { %>
+                <% for (let i = 0; i < historico.length; i++) { %>
+                    <div class="card fadeInBottom_animation" style="--animation-delay: <%= (i*0.05) %>">
+                        <span class="card__titulo"> <%= "ID: "+historico[i].id %> </span>
+                        <span class="card__conta"> <%= historico[i].operacao+" = "+historico[i].resultado %> </span>
+                        <span class="card__btnDeletar" data-index="<%= historico[i].id %>"> X </span> 
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+    <script src="./public/js/CalculadoraEvents.js"> </script>
+</body>
+</html>
